@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:controller="de.arvato.vermietung.controller.CheckoutController"
+            prefHeight="600.0" prefWidth="861.0"
+            stylesheets="@style/checkout.css"
+            xmlns="http://javafx.com/javafx/17.0.6"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <center>
+        <StackPane>
+
+            <ImageView fitWidth="861.0" fitHeight="600.0" preserveRatio="false">
+                <Image url="@img/VermietungBackground.jpg"/>
+            </ImageView>
+
+            <VBox spacing="20"
+                  style="-fx-background-color: rgba(255,255,255,0.88);
+                         -fx-background-radius: 12;">
+                <padding>
+                    <Insets top="20" right="30" bottom="20" left="30"/>
+                </padding>
+
+                <Label text="✅ Checkout – Mietabschluss"
+                       style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+                <VBox spacing="10">
+                    <Label text="Ihre Produkte:"
+                           style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                    <ListView fx:id="checkoutListView"
+                              prefHeight="180"/>
+                </VBox>
+
+                <VBox spacing="10">
+                    <Label text="Mietzeitraum:"
+                           style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                    <HBox spacing="15">
+                        <VBox spacing="5">
+                            <Label text="Von"/>
+                            <DatePicker fx:id="startDatePicker"/>
+                        </VBox>
+
+                        <VBox spacing="5">
+                            <Label text="Bis"/>
+                            <DatePicker fx:id="endDatePicker"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Label text="Gesamtpreis:"
+                           style="-fx-font-size: 16px;"/>
+                    <Label fx:id="totalPriceLabel"
+                           text="0,00 €"
+                           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                </HBox>
+
+                <HBox spacing="15" alignment="CENTER_RIGHT">
+                    <Button text="Zurück zum Warenkorb"
+                            prefWidth="200"
+                            styleClass="button-primary"
+                            onAction="#backToCart"/>
+
+                    <Button text="Miete abschließen"
+                            prefWidth="180"
+                            styleClass="button-primary"
+                            onAction="#confirmCheckout"/>
+                </HBox>
+
+            </VBox>
+        </StackPane>
+    </center>
+
+</BorderPane>

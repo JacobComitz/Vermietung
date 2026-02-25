@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<StackPane prefHeight="600.0" prefWidth="861.0"
+           stylesheets="@style/userprofile.css"
+           xmlns="http://javafx.com/javafx/24.0.1"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="de.arvato.vermietung.controller.UserProfilScreenController">
+
+    <ImageView fitHeight="600" fitWidth="861" preserveRatio="false">
+        <Image url="@img/VermietungBackground.jpg"/>
+    </ImageView>
+
+    <HBox alignment="TOP_LEFT" spacing="40" translateX="40" translateY="20">
+
+        <VBox alignment="TOP_LEFT" spacing="25" maxWidth="400">
+
+            <ImageView fitHeight="120" preserveRatio="true" styleClass="logo">
+                <Image url="@img/VermietungLogo.jpg"/>
+            </ImageView>
+
+            <Label text="Mein Profil" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2f4f4f;"/>
+
+            <VBox alignment="TOP_LEFT" maxWidth="400" spacing="10" style="-fx-background-color: rgba(255,255,255,0.9); -fx-padding: 15; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5,0,0,2);">
+                <Label text="Profildaten" styleClass="section-title"/>
+                <HBox spacing="10">
+                    <Label text="Name:" styleClass="label-bold"/>
+                    <Label fx:id="nameLabel" text="Max Mustermann" styleClass="label-value"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="E-Mail:" styleClass="label-bold"/>
+                    <Label fx:id="emailLabel" text="max@example.com" styleClass="label-value"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Adresse:" styleClass="label-bold"/>
+                    <Label fx:id="addressLabel" text="Musterstraße 1, 12345 Musterstadt" styleClass="label-value"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Telefon:" styleClass="label-bold"/>
+                    <Label fx:id="phoneLabel" text="+49 123 456789" styleClass="label-value"/>
+                </HBox>
+                <Button text="Profil bearbeiten" prefWidth="300" prefHeight="40" styleClass="button-primary" onAction="#editProfile"/>
+                <Button text="Zurück" prefWidth="300" prefHeight="35" styleClass="button-secondary" onAction="#goBack"/>
+            </VBox>
+        </VBox>
+        <VBox alignment="TOP_LEFT" spacing="10" HBox.hgrow="ALWAYS" styleClass="rental-history-section">
+            <Label text="Miethistorie" styleClass="section-title"/>
+            <ScrollPane fitToWidth="true" prefHeight="500" HBox.hgrow="ALWAYS" style="-fx-background-color: rgba(255,255,255,0.9); -fx-background-radius: 10; -fx-padding: 10;">
+                <VBox fx:id="rentalHistoryBox" spacing="8">
+                    <HBox spacing="8" styleClass="history-item">
+                        <Label text="Rute" styleClass="rental-item-name"/>
+                        <Label text="vom 01.01.2026 bis 05.01.2026" styleClass="rental-item-date"/>
+                    </HBox>
+                    <HBox spacing="8" styleClass="history-item">
+                        <Label text="Rolle" styleClass="rental-item-name"/>
+                        <Label text="vom 10.01.2026 bis 12.01.2026" styleClass="rental-item-date"/>
+                    </HBox>
+                </VBox>
+            </ScrollPane>
+        </VBox>
+    </HBox>
+</StackPane>

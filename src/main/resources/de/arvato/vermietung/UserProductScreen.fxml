@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:controller="de.arvato.vermietung.controller.UserProductScreenController"
+            prefHeight="600.0" prefWidth="861.0"
+            stylesheets="@style/userproductscreen.css"
+            xmlns="http://javafx.com/javafx/17.0.6"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <center>
+        <StackPane>
+            <ImageView fitHeight="600.0" fitWidth="861.0" preserveRatio="false">
+                <Image url="@img/VermietungBackground.jpg"/>
+            </ImageView>
+
+            <VBox spacing="20">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <TextField fx:id="searchField"
+                               promptText="Produkte suchen..."
+                               prefWidth="400"/>
+
+                    <Button text="🛒 Warenkorb"
+                            prefWidth="140" prefHeight="35"
+                            styleClass="button-primary"
+                            onAction="#openCart"/>
+
+                    <Button text="👤 Profil"
+                            prefWidth="120" prefHeight="35"
+                            styleClass="button-primary"
+                            onAction="#openProfile"/>
+
+                    <Button text="➜] Logout"
+                            prefWidth="120" prefHeight="35"
+                            styleClass="button-primary"
+                            onAction="#logout"/>
+                </HBox>
+
+                <HBox fx:id="categoryBar" spacing="10" alignment="CENTER">
+                    <Button text="Alle" prefWidth="100" prefHeight="35" styleClass="button-primary" onAction="#showAll"/>
+                    <Button text="Ruten" prefWidth="100" prefHeight="35" styleClass="button-primary" onAction="#showRuten"/>
+                    <Button text="Rollen" prefWidth="100" prefHeight="35" styleClass="button-primary" onAction="#showRollen"/>
+                    <Button text="Köder" prefWidth="100" prefHeight="35" styleClass="button-primary" onAction="#showKöder"/>
+                    <Button text="Sets" prefWidth="100" prefHeight="35" styleClass="button-primary" onAction="#showSets"/>
+                </HBox>
+
+                <HBox fx:id="subcategoryBar" spacing="10" alignment="CENTER"/>
+
+                <ScrollPane fitToWidth="true" prefHeight="400">
+                    <TilePane hgap="20" vgap="20" prefColumns="3" alignment="TOP_CENTER">
+
+                        <VBox spacing="10" alignment="CENTER" styleClass="product-card">
+                             <ImageView fitHeight="120" preserveRatio="true"/>
+                            <Label text="Rute"/>
+                            <Label text="ab 39€ / Tag"/>
+                            <Button text="In den Warenkorb" prefWidth="140" prefHeight="35" styleClass="button-primary"/>
+                        </VBox>
+
+                        <VBox spacing="10" alignment="CENTER" styleClass="product-card">
+                            <ImageView fitHeight="120" preserveRatio="true"/>
+                            <Label text="Rute"/>
+                            <Label text="ab 39€ / Tag"/>
+                            <Button text="In den Warenkorb" prefWidth="140" prefHeight="35" styleClass="button-primary"/>
+                        </VBox>
+
+                        <VBox spacing="10" alignment="CENTER" styleClass="product-card">
+                            <ImageView fitHeight="120" preserveRatio="true"/>
+                            <Label text="Rute"/>
+                            <Label text="ab 39€ / Tag"/>
+                            <Button text="In den Warenkorb" prefWidth="140" prefHeight="35" styleClass="button-primary"/>
+                        </VBox>
+                    </TilePane>
+                </ScrollPane>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>

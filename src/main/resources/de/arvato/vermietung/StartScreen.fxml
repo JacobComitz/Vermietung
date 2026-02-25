@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:controller="de.arvato.vermietung.controller.StartScreenController"
+           prefHeight="600.0" prefWidth="861.0"
+           stylesheets="@style/startscreen.css"
+           xmlns="http://javafx.com/javafx/24.0.1"
+           xmlns:fx="http://javafx.com/fxml/1">
+
+    <ImageView fitHeight="600.0" fitWidth="861.0" preserveRatio="false">
+        <Image url="@img/VermietungBackground.jpg"/>
+    </ImageView>
+
+    <VBox alignment="CENTER" spacing="30">
+
+        <ImageView fitHeight="200" preserveRatio="true" styleClass="logo">
+            <Image url="@img/VermietungLogo.jpg"/>
+        </ImageView>
+
+        <VBox spacing="15" alignment="CENTER">
+            <Button fx:id="ButtonAnmelden"
+                    text="Anmelden"
+                    styleClass="button-primary"
+                    onAction="#switchToAnmeldeScreen"/>
+
+            <Button fx:id="ButtonRegistrieren"
+                    text="Registrieren"
+                    onAction="#switchToRegistrierenScreen"
+                    styleClass="button-primary"/>
+        </VBox>
+
+    </VBox>
+
+</StackPane>

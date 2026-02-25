@@ -1,0 +1,58 @@
+
+.date-picker {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1;
+    -fx-font-size: 13px;
+}
+
+.date-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-padding: 8 10 8 10;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0 10 0 10;
+}
+
+.date-picker .arrow-button:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+.date-picker .arrow {
+    -fx-background-color: #2c3e50;
+}
+
+.date-picker-popup {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+}
+
+.date-picker-popup .day-cell {
+    -fx-background-radius: 6;
+}
+
+.date-picker-popup .day-cell:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+date-picker-popup .day-cell:selected {
+    -fx-background-color: #2c3e50;
+    -fx-text-fill: white;
+}
+
+.button-primary {
+    -fx-background-color: #1e88e5;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 8 18;
+}
+
+.button-primary:hover {
+    -fx-background-color: #1565c0;
+}

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane prefHeight="600.0"
+           prefWidth="861.0"
+           stylesheets="@style/startscreen.css"
+           xmlns="http://javafx.com/javafx/24.0.1"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="de.arvato.vermietung.controller.AdminScreenController">
+
+    <ImageView fitHeight="600" fitWidth="861" preserveRatio="false">
+        <Image url="@img/VermietungBackground.jpg" />
+    </ImageView>
+
+    <BorderPane maxWidth="820" maxHeight="560">
+
+        <top>
+            <HBox alignment="CENTER_LEFT"
+                  spacing="12"
+                  style="-fx-padding: 8 16 6 16;">
+
+                <ImageView fitHeight="40" preserveRatio="true">
+                    <Image url="@img/VermietungLogo.jpg" />
+                </ImageView>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Label text="Adminbereich"
+                       style="-fx-font-size: 22px;
+                              -fx-font-weight: bold;
+                              -fx-text-fill: #2f4f4f;" />
+
+                <Region HBox.hgrow="ALWAYS"/>
+            </HBox>
+        </top>
+
+        <center>
+            <TabPane prefWidth="760"
+                     prefHeight="420"
+                     styleClass="modern-tab-pane">
+
+                <Tab text="Benutzer" closable="false">
+                    <VBox alignment="TOP_CENTER"
+                          spacing="8"
+                          style="-fx-padding: 8 10 10 10;">
+
+                        <TableView fx:id="userTable"
+                                   prefWidth="700"
+                                   prefHeight="230">
+                            <columns>
+                                <TableColumn fx:id="colUserId" text="ID" prefWidth="60"/>
+                                <TableColumn fx:id="colUserName" text="Name" prefWidth="170"/>
+                                <TableColumn fx:id="colUserEmail" text="E-Mail" prefWidth="230"/>
+                                <TableColumn fx:id="colUserRole" text="Rolle" prefWidth="110"/>
+                            </columns>
+                        </TableView>
+
+                        <HBox alignment="CENTER"
+                              spacing="10"
+                              style="-fx-padding: 6 0 0 0;">
+                            <Button fx:id="btnAddUser"
+                                    text="Hinzufügen"
+                                    prefWidth="140"
+                                    styleClass="button-primary"/>
+                            <Button fx:id="btnEditUser"
+                                    text="Bearbeiten"
+                                    prefWidth="140"
+                                    styleClass="button-primary"/>
+                            <Button fx:id="btnDeleteUser"
+                                    text="Löschen"
+                                    prefWidth="140"
+                                    styleClass="button-primary"/>
+                        </HBox>
+
+                    </VBox>
+                </Tab>
+
+                <Tab text="Produkte" closable="false">
+                    <VBox alignment="TOP_CENTER"
+                          spacing="8"
+                          style="-fx-padding: 8 10 10 10;">
+
+                        <TableView fx:id="productTable"
+                                   prefWidth="700"
+                                   prefHeight="230">
+                            <columns>
+                                <TableColumn fx:id="colProductId" text="ID" prefWidth="60"/>
+                                <TableColumn fx:id="colProductName" text="Produktname" prefWidth="210"/>
+                                <TableColumn fx:id="colProductPrice" text="Preis" prefWidth="110"/>
+                                <TableColumn fx:id="colProductStock" text="Bestand" prefWidth="110"/>
+                            </columns>
+                        </TableView>
+
+                        <HBox alignment="CENTER"
+                              spacing="10"
+                              style="-fx-padding: 6 0 0 0;">
+                            <Button fx:id="btnAddProduct"
+                                    text="Hinzufügen"
+                                    prefWidth="140"
+                                    styleClass="button-primary"/>
+                            <Button fx:id="btnEditProduct"
+                                    text="Bearbeiten"
+                                    prefWidth="140"
+                                    styleClass="button-secondary"/>
+                            <Button fx:id="btnDeleteProduct"
+                                    text="Löschen"
+                                    prefWidth="140"
+                                    styleClass="button-secondary"/>
+                        </HBox>
+
+                    </VBox>
+                </Tab>
+
+            </TabPane>
+        </center>
+
+        <bottom>
+            <HBox alignment="CENTER"
+                  style="-fx-padding: 6 0 10 0;">
+                <Button fx:id="buttonLogout"
+                        text="Abmelden"
+                        prefWidth="260"
+                        prefHeight="35"
+                        styleClass="button-secondary"/>
+            </HBox>
+        </bottom>
+
+    </BorderPane>
+
+</StackPane>
