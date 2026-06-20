@@ -36,8 +36,8 @@ public class DatenbankInitialisierung {
                         
                         CREATE  TABLE IF NOT EXISTS mietung (
                                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                name TEXT NOT NULL,
-                                produktID TEXT,
+                                kundeID INTEGER,
+                                produktID INTEGER,
                                 startdatum TEXT,
                                 mietdauer INTEGER
                         );
