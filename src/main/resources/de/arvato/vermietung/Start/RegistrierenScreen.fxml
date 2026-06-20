@@ -9,16 +9,16 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane prefHeight="600.0" prefWidth="861.0" stylesheets="@style/startscreen.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.arvato.vermietung.controller.RegistrierenScreenController">
+<StackPane prefHeight="600.0" prefWidth="861.0" stylesheets="@startscreen.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.arvato.vermietung.controller.RegistrierenScreenController">
 
     <ImageView fitHeight="600" fitWidth="861" preserveRatio="false">
-        <Image url="@img/VermietungBackground.jpg" />
+        <Image url="@../img/VermietungBackground.jpg" />
     </ImageView>
 
     <VBox alignment="TOP_CENTER" maxWidth="320" spacing="20" translateY="20">
 
         <ImageView fitHeight="200" preserveRatio="true" styleClass="logo">
-            <Image url="@img/VermietungLogo.jpg" />
+            <Image url="@../img/VermietungLogo.jpg" />
         </ImageView>
 
         <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2f4f4f;" text="Registrieren" />
@@ -31,7 +31,7 @@
         </VBox>
 
         <VBox alignment="CENTER" maxWidth="320" spacing="12">
-            <Button prefHeight="45" prefWidth="300" styleClass="button-primary" text="Registrieren" />
+            <Button prefHeight="45" prefWidth="300" styleClass="button-primary" text="Registrieren"  onAction="#registrieren"/>
             <Button onAction="#switchToLoginScreen" prefHeight="35" prefWidth="300" styleClass="button-secondary" text="Zurück zum Login" />
         </VBox>
 

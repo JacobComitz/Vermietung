@@ -9,19 +9,20 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane prefHeight="600.0" prefWidth="861.0" stylesheets="@style/startscreen.css"
+<?import javafx.scene.control.Hyperlink?>
+<StackPane prefHeight="600.0" prefWidth="861.0" stylesheets="@startscreen.css"
            xmlns="http://javafx.com/javafx/24.0.1"
            xmlns:fx="http://javafx.com/fxml/1"
            fx:controller="de.arvato.vermietung.controller.AnmeldeScreenController">
 
     <ImageView fitHeight="600" fitWidth="861" preserveRatio="false">
-        <Image url="@img/VermietungBackground.jpg" />
+        <Image url="@../img/VermietungBackground.jpg" />
     </ImageView>
 
     <VBox alignment="TOP_CENTER" maxWidth="320" spacing="20" translateY="40">
 
         <ImageView fitHeight="200" preserveRatio="true" styleClass="logo">
-            <Image url="@img/VermietungLogo.jpg" />
+            <Image url="@../img/VermietungLogo.jpg" />
         </ImageView>
 
         <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2f4f4f;" text="Anmelden" />
@@ -29,11 +30,14 @@
         <VBox alignment="CENTER" maxWidth="320" spacing="12">
             <TextField fx:id="TextfieldEmail" prefWidth="300" promptText="E-Mail" styleClass="input-field" />
 
-            <PasswordField fx:id="TextfieldPassword" onAction="#checkIfAdmin" prefWidth="300" promptText="Passwort" styleClass="input-field" />
+            <PasswordField fx:id="TextfieldPassword" prefWidth="300" promptText="Passwort" styleClass="input-field" />
+            <Hyperlink text="Passwort vergessen?"
+                       onAction="#openWebsite"
+                       style="-fx-text-fill: #1a73e8;" />
         </VBox>
 
         <VBox alignment="CENTER" maxWidth="320" spacing="12">
-            <Button fx:id="ButtonAnmelden" prefHeight="45" prefWidth="300" styleClass="button-primary" text="Anmelden" onAction="#checkIfAdmin" />
+            <Button fx:id="ButtonAnmelden" prefHeight="45" prefWidth="300" styleClass="button-primary" text="Anmelden" />
 
             <Button fx:id="ButtonKeinKonto" onAction="#switchToRegistrierenScreen" prefHeight="35" prefWidth="300" styleClass="button-secondary" text="Noch kein Konto? Registrieren" />
         </VBox>

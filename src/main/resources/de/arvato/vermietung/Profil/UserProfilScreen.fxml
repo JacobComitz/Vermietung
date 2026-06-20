@@ -10,13 +10,13 @@
 <?import javafx.scene.image.ImageView?>
 
 <StackPane prefHeight="600.0" prefWidth="861.0"
-           stylesheets="@style/userprofile.css"
+           stylesheets="@userprofile.css"
            xmlns="http://javafx.com/javafx/24.0.1"
            xmlns:fx="http://javafx.com/fxml/1"
            fx:controller="de.arvato.vermietung.controller.UserProfilScreenController">
 
     <ImageView fitHeight="600" fitWidth="861" preserveRatio="false">
-        <Image url="@img/VermietungBackground.jpg"/>
+        <Image url="@../img/VermietungBackground.jpg"/>
     </ImageView>
 
     <HBox alignment="TOP_LEFT" spacing="40" translateX="40" translateY="20">
@@ -24,7 +24,7 @@
         <VBox alignment="TOP_LEFT" spacing="25" maxWidth="400">
 
             <ImageView fitHeight="120" preserveRatio="true" styleClass="logo">
-                <Image url="@img/VermietungLogo.jpg"/>
+                <Image url="@../img/VermietungLogo.jpg"/>
             </ImageView>
 
             <Label text="Mein Profil" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2f4f4f;"/>

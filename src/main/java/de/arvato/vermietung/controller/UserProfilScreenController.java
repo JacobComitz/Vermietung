@@ -18,15 +18,15 @@ public class UserProfilScreenController {
     }
 
     public void goBack(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/UserProductScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/ProductScreen/UserProductScreen.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }
+    } 
 
     public void editProfile(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/UserEditProfil.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/Profil/UserEditProfil.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);

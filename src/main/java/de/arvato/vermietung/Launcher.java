@@ -1,5 +1,6 @@
 package de.arvato.vermietung;
 
+import de.arvato.vermietung.database.DatenbankInitialisierung;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,7 +12,7 @@ public class Launcher extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Launcher.class.getResource("StartScreen.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Launcher.class.getResource("/de/arvato/vermietung/Start/StartScreen.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Hooked\uD83E\uDE9D");
         stage.setScene(scene);
@@ -19,6 +20,9 @@ public class Launcher extends Application {
     }
 
     public static void main(String[] args) {
+        DatenbankInitialisierung.initialisierung();
+
         launch();
     }
+
 }

@@ -15,7 +15,7 @@ public class UserProductScreenController {
     private Scene Parent;
 
     public void openCart(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/cart.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/Checkout/cart.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -38,7 +38,7 @@ public class UserProductScreenController {
     }
 
     public void openProfile(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/UserProfilScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/Profil/UserProfilScreen.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -46,7 +46,7 @@ public class UserProductScreenController {
     }
 
     public void logout(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/StartScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/Start/StartScreen.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

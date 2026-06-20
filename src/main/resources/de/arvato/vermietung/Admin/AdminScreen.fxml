@@ -6,13 +6,13 @@
 
 <StackPane prefHeight="600.0"
            prefWidth="861.0"
-           stylesheets="@style/startscreen.css"
+           stylesheets="@../Start/startscreen.css"
            xmlns="http://javafx.com/javafx/24.0.1"
            xmlns:fx="http://javafx.com/fxml/1"
            fx:controller="de.arvato.vermietung.controller.AdminScreenController">
 
     <ImageView fitHeight="600" fitWidth="861" preserveRatio="false">
-        <Image url="@img/VermietungBackground.jpg" />
+        <Image url="@../img/VermietungBackground.jpg" />
     </ImageView>
 
     <BorderPane maxWidth="820" maxHeight="560">
@@ -23,7 +23,7 @@
                   style="-fx-padding: 8 16 6 16;">
 
                 <ImageView fitHeight="40" preserveRatio="true">
-                    <Image url="@img/VermietungLogo.jpg" />
+                    <Image url="@../img/VermietungLogo.jpg" />
                 </ImageView>
 
                 <Region HBox.hgrow="ALWAYS"/>
@@ -124,7 +124,8 @@
                         text="Abmelden"
                         prefWidth="260"
                         prefHeight="35"
-                        styleClass="button-secondary"/>
+                        styleClass="button-secondary"
+                        onAction="#logout"/>
             </HBox>
         </bottom>
 

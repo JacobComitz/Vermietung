@@ -14,7 +14,7 @@ public class ProfileEditController {
     }
 
     public void goBack(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/UserProfilScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/Profil/UserProfilScreen.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);

@@ -6,20 +6,21 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.control.Hyperlink?>
 <StackPane fx:controller="de.arvato.vermietung.controller.StartScreenController"
            prefHeight="600.0" prefWidth="861.0"
-           stylesheets="@style/startscreen.css"
+           stylesheets="@startscreen.css"
            xmlns="http://javafx.com/javafx/24.0.1"
            xmlns:fx="http://javafx.com/fxml/1">
 
     <ImageView fitHeight="600.0" fitWidth="861.0" preserveRatio="false">
-        <Image url="@img/VermietungBackground.jpg"/>
+        <Image url="@../img/VermietungBackground.jpg"/>
     </ImageView>
 
     <VBox alignment="CENTER" spacing="30">
 
         <ImageView fitHeight="200" preserveRatio="true" styleClass="logo">
-            <Image url="@img/VermietungLogo.jpg"/>
+            <Image url="@../img/VermietungLogo.jpg"/>
         </ImageView>
 
         <VBox spacing="15" alignment="CENTER">
@@ -32,6 +33,10 @@
                     text="Registrieren"
                     onAction="#switchToRegistrierenScreen"
                     styleClass="button-primary"/>
+
+            <Hyperlink text="Hilfe?"
+                       onAction="#openWebsite"
+                       style="-fx-text-fill: #1a73e8;" />
         </VBox>
 
     </VBox>

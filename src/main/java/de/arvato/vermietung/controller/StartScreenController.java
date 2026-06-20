@@ -9,7 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URI;
 
 public class StartScreenController {
 
@@ -21,7 +23,7 @@ public class StartScreenController {
     private Parent root;
 
     public void switchToRegistrierenScreen(ActionEvent event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/RegistrierenScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/Start/RegistrierenScreen.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -29,10 +31,19 @@ public class StartScreenController {
     }
 
     public void switchToAnmeldeScreen(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/AnmeldeScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/Start/AnmeldeScreen.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    private void openWebsite(ActionEvent event) {
+        try {
+            Desktop.getDesktop().browse(new URI("https://boulderbugle.com/IyDVzUq6"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

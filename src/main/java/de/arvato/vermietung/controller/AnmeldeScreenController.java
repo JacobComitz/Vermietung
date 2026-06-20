@@ -11,8 +11,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.awt.*;
+import java.net.URI;
+import java.util.Objects;
+
 public class AnmeldeScreenController {
-    User user = new User();
+
 
     @FXML private Button ButtonKeinKonto;
     @FXML private  Button ButtonAnmelden;
@@ -24,28 +28,17 @@ public class AnmeldeScreenController {
     private Parent root;
 
     public void switchToRegistrierenScreen(ActionEvent event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/RegistrierenScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/Start/RegistrierenScreen.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-    @FXML
-    public void checkIfAdmin(ActionEvent event) throws Exception {
 
-        user.checkAdminLogin(getEmail(), getPassword());
-        user.checkUserLogin(getEmail(), getPassword());
-
-        if (user.isAdmin()) {
-            switchToAdminScreen(event);
-        } else if (user.isUser()) {
-            switchToUserProductScreen(event);
-        }
-    }
 
     public void switchToAdminScreen(ActionEvent event) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/AdminScreen.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/de/arvato/vermietung/Admin/AdminScreen.fxml")));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -53,7 +46,7 @@ public class AnmeldeScreenController {
     }
 
     public void switchToUserProductScreen(ActionEvent event) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/UserProductScreen.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/de/arvato/vermietung/ProductScreen/UserProductScreen.fxml")));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -68,4 +61,12 @@ public class AnmeldeScreenController {
         return TextfieldPassword.getText();
     }
 
+    @FXML
+    private void openWebsite(ActionEvent event) {
+        try {
+            Desktop.getDesktop().browse(new URI("https://boulderbugle.com/IyDVzUq6"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

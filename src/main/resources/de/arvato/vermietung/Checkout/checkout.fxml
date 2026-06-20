@@ -14,7 +14,7 @@
 
 <BorderPane fx:controller="de.arvato.vermietung.controller.CheckoutController"
             prefHeight="600.0" prefWidth="861.0"
-            stylesheets="@style/checkout.css"
+            stylesheets="@checkout.css"
             xmlns="http://javafx.com/javafx/17.0.6"
             xmlns:fx="http://javafx.com/fxml/1">
 
@@ -22,7 +22,7 @@
         <StackPane>
 
             <ImageView fitWidth="861.0" fitHeight="600.0" preserveRatio="false">
-                <Image url="@img/VermietungBackground.jpg"/>
+                <Image url="@../img/VermietungBackground.jpg"/>
             </ImageView>
 
             <VBox spacing="20"

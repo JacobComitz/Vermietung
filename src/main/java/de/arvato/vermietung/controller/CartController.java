@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class CartController {
     public void closeCart(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/UserProductScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/ProductScreen/UserProductScreen.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -19,7 +19,7 @@ public class CartController {
     }
 
     public void checkout(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/checkout.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/de/arvato/vermietung/Checkout/checkout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
