@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class UserRepository {
     public static void speichern(User user){
         try(Connection con = DatenbankConnection.verbinden()){
-            String sql = "INSERT INTO kunden (name,email) VALUES (TEXT,TEXT)";
+            String sql = "INSERT INTO kunden (name,email) VALUES (?,?)";
 
             PreparedStatement pstmt = con.prepareStatement(sql);
 
