@@ -31,7 +31,7 @@ public class ProduktRepository {
         }
     }
 
-    public static User findeAlle() {
+    public static List<Produkt> findeAlle() {
         List<Produkt> produkte = new ArrayList<>();
 
         try (Connection con = DatenbankConnection.verbinden()) {
@@ -46,9 +46,10 @@ public class ProduktRepository {
                 String kategorieAusDb = rs.getString("kategorie");
                 int anzahlAusDb = rs.getInt("anzahl");
                 double preisProTagAusDb = rs.getDouble("preisProTag");
-                String bildpfadAusDb = rs.getString("bildpad");
+                String bildpfadAusDb = rs.getString("bildpfad");
 
-                produkte = Collections.singletonList(new Produkt(nameAusDb, beschreibungAusDb, kategorieAusDb, anzahlAusDb, preisProTagAusDb, bildpfadAusDb));
+                Produkt produkt = new Produkt(nameAusDb, beschreibungAusDb, kategorieAusDb, anzahlAusDb, preisProTagAusDb, bildpfadAusDb);
+                produkte.add(produkt);
             }
 
         } catch (SQLException e) {
