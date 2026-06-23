@@ -2,14 +2,12 @@ package de.arvato.vermietung.repository;
 
 import de.arvato.vermietung.database.DatenbankConnection;
 import de.arvato.vermietung.model.Produkt;
-import de.arvato.vermietung.model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class ProduktRepository {
