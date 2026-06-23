@@ -12,7 +12,8 @@ public class DatenbankInitialisierung {
                         CREATE  TABLE IF NOT EXISTS kunden (
                                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                                 name TEXT NOT NULL,
-                                email TEXT
+                                email TEXT,
+                                password VARCHAR
                         );
                         """;
 
