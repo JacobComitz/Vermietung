@@ -8,7 +8,7 @@ public class Product {
     private double preisProTag;
     private String bildpfad;
 
-    public Product() {
+    public Product(String name, String beschreibung, String kategorie, int anzahl, double preisProTag, String bildpfad) {
         this.name = name;
         this.beschreibung = beschreibung;
         this.kategorie = kategorie;
