@@ -1,6 +1,6 @@
 package de.arvato.vermietung.model;
 
-public class Product {
+public class Produkt {
     private String name;
     private String beschreibung;
     private String kategorie;
@@ -8,7 +8,7 @@ public class Product {
     private double preisProTag;
     private String bildpfad;
 
-    public Product(String name, String beschreibung, String kategorie, int anzahl, double preisProTag, String bildpfad) {
+    public Produkt(String name, String beschreibung, String kategorie, int anzahl, double preisProTag, String bildpfad) {
         this.name = name;
         this.beschreibung = beschreibung;
         this.kategorie = kategorie;
