@@ -11,12 +11,13 @@ import java.sql.SQLException;
 public class UserRepository {
     public static void speichern(User user) {
         try (Connection con = DatenbankConnection.verbinden()) {
-            String sql = "INSERT INTO kunden (name,email) VALUES (?,?)";
+            String sql = "INSERT INTO kunden (name,email,password) VALUES (?,?)";
 
             PreparedStatement pstmt = con.prepareStatement(sql);
 
             pstmt.setString(1, user.getUsername());
             pstmt.setString(2, user.getEmail());
+            pstmt.setString(3, user.getPassword());
             pstmt.executeUpdate();
 
         } catch (SQLException e) {
@@ -27,7 +28,7 @@ public class UserRepository {
     public static User findByMail(String email) {
         User user = null;
         try (Connection con = DatenbankConnection.verbinden()) {
-            String sql = "SELECT * FROM kunde WHERE email = ?";
+            String sql = "SELECT * FROM kunden WHERE email = ?";
 
             PreparedStatement pstmt = con.prepareStatement(sql);
             pstmt.setString(1, email);
