@@ -2,15 +2,20 @@ package de.arvato.vermietung.repository;
 
 import de.arvato.vermietung.database.DatenbankConnection;
 import de.arvato.vermietung.model.Produkt;
+import de.arvato.vermietung.model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class ProduktRepository {
-    public static void speichern(Produkt produkt){
-        try(Connection con = DatenbankConnection.verbinden()){
-            String sql = "INSERT INTO produkte (name, beschreibung, kategorie, anzahl, preisProTag, bildpfad) VALUES (?,?,?,?,?,?";
+    public static void speichern(Produkt produkt) {
+        try (Connection con = DatenbankConnection.verbinden()) {
+            String sql = "INSERT INTO produkte (name, beschreibung, kategorie, anzahl, preisProTag, bildpfad) VALUES (?,?,?,?,?,?)";
 
             PreparedStatement pstmt = con.prepareStatement(sql);
 
@@ -20,9 +25,35 @@ public class ProduktRepository {
             pstmt.setInt(4, produkt.getAnzahl());
             pstmt.setDouble(5, produkt.getPreisProTag());
             pstmt.setString(6, produkt.getBildpfad());
-
-        }catch(SQLException e){
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static User findeAlle() {
+        List<Produkt> produkte = new ArrayList<>();
+
+        try (Connection con = DatenbankConnection.verbinden()) {
+            String sql = "SELECT * FROM produkte";
+
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                String nameAusDb = rs.getString("name");
+                String beschreibungAusDb = rs.getString("beschreibung");
+                String kategorieAusDb = rs.getString("kategorie");
+                int anzahlAusDb = rs.getInt("anzahl");
+                double preisProTagAusDb = rs.getDouble("preisProTag");
+                String bildpfadAusDb = rs.getString("bildpad");
+
+                produkte = Collections.singletonList(new Produkt(nameAusDb, beschreibungAusDb, kategorieAusDb, anzahlAusDb, preisProTagAusDb, bildpfadAusDb));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return produkte;
     }
 }
