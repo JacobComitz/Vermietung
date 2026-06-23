@@ -17,7 +17,6 @@ public class DatenbankInitialisierung {
                         );
                         """;
 
-
         String sqlProdukt =
                 """
                         
