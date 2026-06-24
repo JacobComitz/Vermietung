@@ -9,11 +9,12 @@ public class DatenbankInitialisierung {
 
         String sqlKunde =
                 """
-                        CREATE  TABLE IF NOT EXISTS kunden (
-                                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                name TEXT NOT NULL,
-                                email TEXT,
-                                password VARCHAR
+                        IF NOT EXISTS (SELECT * FROM sysobjects WHERE name ='kunde' AND xtype = 'U')
+                        CREATE TABLE kunden ( 
+                                id INT IDENTITY(1,1) PRIMARY KEY,
+                                name VARCHAR(255) NOT NULL,
+                                email VARCHAR(255),
+                                password VARCHAR(255)
                         );
                         """;
 
