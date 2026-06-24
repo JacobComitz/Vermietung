@@ -1,5 +1,7 @@
 package de.arvato.vermietung.controller;
 
+import de.arvato.vermietung.model.User;
+import de.arvato.vermietung.repository.UserRepository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -79,6 +81,9 @@ public class RegistrierenScreenController {
         else {
             logger.info("Registrierung erfolgreich!");
             System.out.println("PW richtig");
+
+            User user = new User(getName(), getEmail(), getPassword());
+            UserRepository.speichern(user);
         }
     }
 
