@@ -6,6 +6,6 @@ import java.sql.SQLException;
 
 public class DatenbankConnection {
     public static Connection verbinden() throws SQLException {
-        return DriverManager.getConnection("jdbc:sqlserver://(localdb)\\MSSQLLocalDB;databaseName=AngelVermietung;integratedSecurity=true;trustServerCertificate=true;");
+        return DriverManager.getConnection("jdbc:sqlserver:localhost\\SQLEXPRESS;databaseName=AngelVermietung;integratedSecurity=true;trustServerCertificate=true;");
     }
 }
