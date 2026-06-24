@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatenbankConnection {
-    public static Connection verbinden() throws SQLException{
-        return DriverManager.getConnection("jdbc:sqlite:DatenbankVermietung.db");
+    public static Connection verbinden() throws SQLException {
+        return DriverManager.getConnection("jdbc:sqlserver://(localdb)\\MSSQLLocalDB;databaseName=AngelVermietung;integratedSecurity=true;trustServerCertificate=true;");
     }
 }
