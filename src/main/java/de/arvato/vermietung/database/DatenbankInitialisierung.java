@@ -9,7 +9,7 @@ public class DatenbankInitialisierung {
 
         String sqlKunde =
                 """
-                        IF NOT EXISTS (SELECT * FROM sysobjects WHERE name ='kunde' AND xtype = 'U')
+                        IF NOT EXISTS (SELECT * FROM sysobjects WHERE name ='kunden' AND xtype = 'U')
                         CREATE TABLE kunden ( 
                                 id INT IDENTITY(1,1) PRIMARY KEY,
                                 name VARCHAR(255) NOT NULL,
@@ -46,9 +46,9 @@ public class DatenbankInitialisierung {
 
         try (Connection con = DatenbankConnection.verbinden();
              Statement stmt = con.createStatement()) {
-            stmt.execute(sqlProdukt);
+//          stmt.execute(sqlProdukt);
             stmt.execute(sqlKunde);
-            stmt.execute(sqlMietung);
+//          stmt.execute(sqlMietung);
             System.out.println("Tabellen geprüft");
 
         } catch (Exception e) {
