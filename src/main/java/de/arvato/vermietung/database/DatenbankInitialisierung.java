@@ -14,7 +14,8 @@ public class DatenbankInitialisierung {
                                 id INT IDENTITY(1,1) PRIMARY KEY,
                                 name VARCHAR(255) NOT NULL,
                                 email VARCHAR(255),
-                                password VARCHAR(255)
+                                password VARCHAR(255),
+                                admin BIT
                         );
                         """;
 
