@@ -82,7 +82,7 @@ public class RegistrierenScreenController {
             logger.info("Registrierung erfolgreich!");
             System.out.println("PW richtig");
 
-            User user = new User(getName(), getEmail(), getPassword());
+            User user = new User(getName(), getEmail(), getPassword(), isAdmin());
             UserRepository.speichern(user);
         }
     }

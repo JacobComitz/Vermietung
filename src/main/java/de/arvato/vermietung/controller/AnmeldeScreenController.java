@@ -74,7 +74,7 @@ public class AnmeldeScreenController {
         }
     }
     @FXML
-    public void anmelden(ActionEvent event) {
+    public void anmelden(ActionEvent event) throws Exception {
         if (felderLeer()){
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -95,6 +95,12 @@ public class AnmeldeScreenController {
             alert.setContentText("Dieses Password ist falsch");
             alert.showAndWait();
             return;
+        }
+
+        if (user.isAdmin()){
+            switchToAdminScreen(event);
+        }else {
+            switchToUserProductScreen(event);
         }
     }
 
