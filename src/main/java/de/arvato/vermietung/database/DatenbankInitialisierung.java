@@ -25,9 +25,9 @@ public class DatenbankInitialisierung {
                                 id INT IDENTITY (1,1) PRIMARY KEY,
                                 name VARCHAR(255) NOT NULL,
                                 beschreibung VARCHAR(255),
-                                kategorie VARCHAR(255)
+                                kategorie VARCHAR(255),
                                 anzahl INT,
-                                preisProTag DOUBLE,
+                                preisProTag FLOAT,
                                 bildpfad VARCHAR(255)
                         );
                         """;
@@ -46,9 +46,9 @@ public class DatenbankInitialisierung {
 
         try (Connection con = DatenbankConnection.verbinden();
              Statement stmt = con.createStatement()) {
-//          stmt.execute(sqlProdukt);
+            stmt.execute(sqlProdukt);
             stmt.execute(sqlKunde);
-//          stmt.execute(sqlMietung);
+            stmt.execute(sqlMietung);
             System.out.println("Tabellen geprüft");
 
         } catch (Exception e) {
