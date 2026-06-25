@@ -87,7 +87,7 @@ public class RegistrierenScreenController {
         }
     }
 
-    public boolean felderLeer(){
+    private boolean felderLeer(){
        return TextfieldEmail.getText().isEmpty() ||
                TextfieldName.getText().isEmpty() ||
                TextfieldPassword.getText().isEmpty() ||

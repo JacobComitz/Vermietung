@@ -37,7 +37,7 @@
         </VBox>
 
         <VBox alignment="CENTER" maxWidth="320" spacing="12">
-            <Button fx:id="ButtonAnmelden" prefHeight="45" prefWidth="300" styleClass="button-primary" text="Anmelden" />
+            <Button fx:id="ButtonAnmelden" prefHeight="45" prefWidth="300" styleClass="button-primary" text="Anmelden" onAction="#anmelden"/>
 
             <Button fx:id="ButtonKeinKonto" onAction="#switchToRegistrierenScreen" prefHeight="35" prefWidth="300" styleClass="button-secondary" text="Noch kein Konto? Registrieren" />
         </VBox>

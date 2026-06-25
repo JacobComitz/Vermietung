@@ -5,6 +5,7 @@ module de.arvato.vermietung {
     requires java.sql;
     requires org.apache.logging.log4j;
     requires jakarta.mail;
+    requires org.slf4j;
 
 
     opens de.arvato.vermietung to javafx.fxml;
