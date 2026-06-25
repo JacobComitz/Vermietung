@@ -89,6 +89,10 @@ public class AnmeldeScreenController {
             alert.showAndWait();
             return;
         }
+
+        if(Objects.equals(TextfieldPassword.getText(), user.getPassword())){
+
+        }
     }
 
     private boolean felderLeer(){
