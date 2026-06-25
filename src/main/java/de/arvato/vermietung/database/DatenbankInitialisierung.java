@@ -20,27 +20,27 @@ public class DatenbankInitialisierung {
 
         String sqlProdukt =
                 """
-                        
-                        CREATE  TABLE IF NOT EXISTS produkte (
-                                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                name TEXT NOT NULL,
-                                beschreibung TEXT,
-                                kategorie TEXT,
-                                anzahl INTEGER,
+                        IF NOT EXISTS (SELECT * FROM sysobjects WHERE name ='produkte' AND xtype = 'U')
+                        CREATE TABLE produkte(
+                                id INT IDENTITY (1,1) PRIMARY KEY,
+                                name VARCHAR(255) NOT NULL,
+                                beschreibung VARCHAR(255),
+                                kategorie VARCHAR(255)
+                                anzahl INT,
                                 preisProTag DOUBLE,
-                                bildpfad TEXT
+                                bildpfad VARCHAR(255)
                         );
                         """;
 
         String sqlMietung =
                 """
-                        
-                        CREATE  TABLE IF NOT EXISTS mietung (
-                                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                kundeID INTEGER,
-                                produktID INTEGER,
-                                startdatum TEXT,
-                                mietdauer INTEGER
+                        IF NOT EXISTS (SELECT * FROM sysobjects WHERE name ='mietung' AND xtype = 'U')
+                        CREATE TABLE mietung ( 
+                                id INT IDENTITY(1,1) PRIMARY KEY,
+                                kundeID INT,
+                                produktID INT,
+                                startdatum VARCHAR(255),
+                                mietdauer INT
                         );
                         """;
 

@@ -9,7 +9,7 @@ public class DatenbankConnection {
     public static Connection verbinden() throws SQLException {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            String url = "jdbc:sqlserver://localhost:1433;databaseName=AngelVermietung;encrypt=true;trustServerCertificate=true;";
+            String url = "jdbc:sqlserver://localhost\\SQLEXPRESS;databaseName=AngelVermietung;encrypt=true;trustServerCertificate=true;";
             String user = "AngelVermietung";
             String password = "123";
             return DriverManager.getConnection(url, user, password);
