@@ -38,8 +38,9 @@ public class UserRepository {
                 String nameAusDb = rs.getString("name");
                 String emailAusDb = rs.getString("email");
                 String passwordAusDb = rs.getString("password");
+                boolean adminAusDb = rs.getBoolean("admin");
 
-                user = new User(nameAusDb, emailAusDb, passwordAusDb, false);
+                user = new User(nameAusDb, emailAusDb, passwordAusDb, adminAusDb);
             }
         } catch (SQLException e) {
             e.printStackTrace();

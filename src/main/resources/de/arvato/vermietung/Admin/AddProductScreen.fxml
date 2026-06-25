@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER"
+      spacing="12"
+      style="-fx-padding: 20;"
+      prefWidth="400"
+      prefHeight="420"
+      xmlns="http://javafx.com/javafx/24.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="de.arvato.vermietung.controller.AddProductScreenController">
+
+    <Label text="Neues Produkt"
+           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="TextfieldName" promptText="Name"/>
+    <TextField fx:id="TextfieldBeschreibung" promptText="Beschreibung"/>
+    <TextField fx:id="TextfieldKategorie" promptText="Kategorie"/>
+    <TextField fx:id="TextfieldAnzahl" promptText="Anzahl"/>
+    <TextField fx:id="TextfieldPreisProTag" promptText="Preis pro Tag"/>
+    <TextField fx:id="TextfieldBildpfad" promptText="Bildpfad"/>
+
+    <Button fx:id="buttonSpeichern"
+            text="Speichern"
+            prefWidth="200"
+            onAction="#speichern"/>
+
+</VBox>
