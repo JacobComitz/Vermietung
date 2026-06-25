@@ -39,7 +39,7 @@ public class UserRepository {
                 String emailAusDb = rs.getString("email");
                 String passwordAusDb = rs.getString("password");
 
-                user = new User(nameAusDb, emailAusDb, passwordAusDb);
+                user = new User(nameAusDb, emailAusDb, passwordAusDb, false);
             }
         } catch (SQLException e) {
             e.printStackTrace();
