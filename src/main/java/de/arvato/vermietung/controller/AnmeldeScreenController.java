@@ -90,8 +90,11 @@ public class AnmeldeScreenController {
             return;
         }
 
-        if(Objects.equals(TextfieldPassword.getText(), user.getPassword())){
-
+        if(!getPassword().equals(user.getPassword())){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Dieses Password ist falsch");
+            alert.showAndWait();
+            return;
         }
     }
 
