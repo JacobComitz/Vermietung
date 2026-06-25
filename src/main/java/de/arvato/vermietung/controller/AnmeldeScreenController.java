@@ -1,5 +1,7 @@
 package de.arvato.vermietung.controller;
 
+import de.arvato.vermietung.model.User;
+import de.arvato.vermietung.repository.UserRepository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -77,6 +79,13 @@ public class AnmeldeScreenController {
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Bitte alle Felder ausfüllen");
+            alert.showAndWait();
+            return;
+        }
+        User user = UserRepository.findByMail(getEmail());
+        if (user == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Diese Email Existiert nicht");
             alert.showAndWait();
             return;
         }
