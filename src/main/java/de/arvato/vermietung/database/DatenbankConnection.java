@@ -5,15 +5,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatenbankConnection {
-    private Connection DbConnection;
 
-    public void DbConnection(){
-        try{
+    public static Connection verbinden() throws SQLException {
+        try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            String url ="jdbc:sqlserver://localhost:1433;databaseName=test;encrypt=true;trustServerCertificate=true;";
-            String user ="AngelVermietung";
-            String password ="Angelvermietung";
-            this.DbConnection = DriverManager.getConnection(url,user,password);
+            String url = "jdbc:sqlserver://localhost:1433;databaseName=test;encrypt=true;trustServerCertificate=true;";
+            String user = "AngelVermietung";
+            String password = "Angelvermietung";
+            return DriverManager.getConnection(url, user, password);
 
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
