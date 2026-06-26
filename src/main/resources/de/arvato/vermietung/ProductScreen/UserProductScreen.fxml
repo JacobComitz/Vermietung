@@ -62,29 +62,7 @@
                 <HBox fx:id="subcategoryBar" spacing="10" alignment="CENTER"/>
 
                 <ScrollPane fitToWidth="true" prefHeight="400">
-                    <TilePane hgap="20" vgap="20" prefColumns="3" alignment="TOP_CENTER">
-
-                        <VBox spacing="10" alignment="CENTER" styleClass="product-card">
-                             <ImageView fitHeight="120" preserveRatio="true"/>
-                            <Label text="Rute"/>
-                            <Label text="ab 39€ / Tag"/>
-                            <Button text="In den Warenkorb" prefWidth="140" prefHeight="35" styleClass="button-primary"/>
-                        </VBox>
-
-                        <VBox spacing="10" alignment="CENTER" styleClass="product-card">
-                            <ImageView fitHeight="120" preserveRatio="true"/>
-                            <Label text="Rute"/>
-                            <Label text="ab 39€ / Tag"/>
-                            <Button text="In den Warenkorb" prefWidth="140" prefHeight="35" styleClass="button-primary"/>
-                        </VBox>
-
-                        <VBox spacing="10" alignment="CENTER" styleClass="product-card">
-                            <ImageView fitHeight="120" preserveRatio="true"/>
-                            <Label text="Rute"/>
-                            <Label text="ab 39€ / Tag"/>
-                            <Button text="In den Warenkorb" prefWidth="140" prefHeight="35" styleClass="button-primary"/>
-                        </VBox>
-                    </TilePane>
+                    <TilePane fx:id="productTilePane" hgap="20" vgap="20" prefColumns="3" alignment="TOP_CENTER"/>
                 </ScrollPane>
             </VBox>
         </StackPane>
