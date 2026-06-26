@@ -100,6 +100,7 @@
                             <Button fx:id="btnAddProduct"
                                     text="Hinzufügen"
                                     prefWidth="140"
+                                    onAction="#switchToAddProductScreen"
                                     styleClass="button-primary"/>
                             <Button fx:id="btnEditProduct"
                                     text="Bearbeiten"

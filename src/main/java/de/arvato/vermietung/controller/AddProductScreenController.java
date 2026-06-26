@@ -7,8 +7,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-import java.lang.classfile.constantpool.DoubleEntry;
-
 public class AddProductScreenController {
 
     @FXML private TextField TextfieldName;

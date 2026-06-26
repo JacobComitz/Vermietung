@@ -18,4 +18,12 @@ public class AdminScreenController {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void switchToAddProductScreen(ActionEvent event) throws IOException {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/de/arvato/vermietung/Admin/AddProductScreen.fxml")));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+    }
 }
